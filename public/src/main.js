@@ -391,3 +391,27 @@ async function restoreSession() {
 }
 
 restoreSession();
+
+
+const robotHead = document.querySelector(".robot-head");
+
+if(robotHead){
+
+document.addEventListener("mousemove",(e)=>{
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const deltaX = (e.clientX - centerX) / centerX;
+    const deltaY = (e.clientY - centerY) / centerY;
+
+    const rotateY = deltaX * 8;
+    const rotateX = deltaY * -4;
+
+    robotHead.style.transform =
+        `translateX(-50%)
+         rotate(${rotateY}deg)
+         translateY(${rotateX}px)`;
+
+});
+}
