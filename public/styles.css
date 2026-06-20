@@ -1,19 +1,25 @@
 :root {
-  color-scheme: light;
-  --bg: #f9ef47;
-  --bg-2: #ff7a00;
-  --paper: #fff7da;
-  --panel: #fffef4;
-  --panel-2: #dff4ff;
-  --ink: #111111;
-  --muted: #3f3f46;
-  --accent: #ff2d55;
-  --accent-2: #0057ff;
-  --accent-3: #00b7ff;
-  --accent-4: #7dff54;
-  --line: #111111;
-  --shadow: 8px 8px 0 #111111;
-  --shadow-soft: 5px 5px 0 #111111;
+  color-scheme: dark;
+
+  --bg: #050816;
+  --bg-2: #0b1023;
+
+  --paper: rgba(17, 24, 39, 0.95);
+  --panel: rgba(15, 23, 42, 0.9);
+  --panel-2: rgba(30, 41, 59, 0.9);
+
+  --ink: #ffffff;
+  --muted: #94a3b8;
+
+  --accent: #8b5cf6;
+  --accent-2: #3b82f6;
+  --accent-3: #06b6d4;
+  --accent-4: #22c55e;
+
+  --line: rgba(255,255,255,.08);
+
+  --shadow: 0 20px 60px rgba(0,0,0,.5);
+  --shadow-soft: 0 8px 25px rgba(0,0,0,.35);
 }
 
 * {
@@ -30,9 +36,10 @@ body {
   font-family: "Trebuchet MS", "Arial Black", Arial, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px) 0 0 / 22px 22px,
-    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px) 0 0 / 26px 26px,
-    linear-gradient(135deg, var(--bg) 0%, #ffd63d 38%, #ff9750 38%, #ff9750 72%, #6fd2ff 72%, #6fd2ff 100%);
+radial-gradient(circle at 15% 20%, rgba(59,130,246,.25), transparent 30%),
+radial-gradient(circle at 85% 25%, rgba(139,92,246,.25), transparent 30%),
+radial-gradient(circle at 50% 80%, rgba(6,182,212,.18), transparent 35%),
+#050816;
 }
 
 body::before,
@@ -83,7 +90,9 @@ p {
 
 .glass-card {
   position: relative;
-  background: var(--panel);
+  background: rgba(15,23,42,.65);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
   border: 3px solid var(--line);
   border-radius: 28px;
   box-shadow: var(--shadow);
@@ -601,9 +610,7 @@ textarea:focus {
   gap: 20px;
   align-items: center;
   padding: 28px;
-  background:
-    radial-gradient(circle at 14% 22%, rgba(255, 255, 255, 0.34) 0 2px, transparent 3px) 0 0 / 18px 18px,
-    linear-gradient(135deg, #ff2d55 0%, #ff2d55 34%, #ffcf34 34%, #ffcf34 68%, #2ec5ff 68%, #2ec5ff 100%);
+  background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.15));
 }
 
 .hero-panel .eyebrow {
@@ -621,7 +628,7 @@ textarea:focus {
   border: 3px solid var(--line);
   border-radius: 26px;
   box-shadow: var(--shadow);
-  background: #141735;
+  background: transparent;
 }
 
 .workspace-grid {
@@ -707,9 +714,7 @@ textarea:focus {
   white-space: pre-wrap;
   border-radius: 22px;
   border: 3px solid var(--line);
-  background:
-    radial-gradient(circle at 12% 18%, rgba(255, 45, 85, 0.11) 0 2px, transparent 3px) 0 0 / 22px 22px,
-    #fffef7;
+  background: rgba(15,23,42,.8);
   color: var(--ink);
   line-height: 1.7;
   box-shadow: var(--shadow-soft);
