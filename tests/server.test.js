@@ -61,13 +61,13 @@ test("validateCredentials checks email and password rules", () => {
   assert.match(invalid.error, /valid email address/);
 
   const valid = validateCredentials({
-    email: "  Creator@Narrivox.ai ",
+    email: "  Creator@ScriptGenie.ai ",
     password: "supersecure"
   });
 
   assert.equal(valid.isValid, true);
   assert.deepEqual(valid.data, {
-    email: "creator@narrivox.ai",
+    email: "creator@scriptgenie.ai",
     password: "supersecure"
   });
 });
