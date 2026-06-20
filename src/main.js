@@ -24,7 +24,7 @@ const thumbnailEmpty = document.querySelector("#thumbnail-empty");
 
 let currentHistoryId = null;
 let currentUser = null;
-let sessionToken = localStorage.getItem("narrivox-session-token") || "";
+let sessionToken = localStorage.getItem("scriptgenie-session-token") || "";
 let scriptHistory = [];
 
 function updateOutput(message, status) {
@@ -269,7 +269,7 @@ async function handleAuthSubmit(event, mode) {
     });
 
     sessionToken = data.token;
-    localStorage.setItem("narrivox-session-token", sessionToken);
+    localStorage.setItem("scriptgenie-session-token", sessionToken);
     loginForm.reset();
     signupForm.reset();
     setAuthStatus("Synced with the database.");
@@ -292,7 +292,7 @@ logoutButton.addEventListener("click", async () => {
   } catch {}
 
   sessionToken = "";
-  localStorage.removeItem("narrivox-session-token");
+  localStorage.removeItem("scriptgenie-session-token");
   loginForm.reset();
   signupForm.reset();
   setActiveAuthTab("login");
@@ -312,7 +312,7 @@ async function handleSubmit(event) {
 
   setLoadingState(true);
   updateToneBadge();
-  updateOutput("Narrivox AI is building your outline, hook, and full script...", "Generating script...");
+  updateOutput("ScriptGenie AI is building your outline, hook, and full script...", "Generating script...");
 
   try {
     const data = await requestJson("/api/generate-script", {
@@ -345,7 +345,7 @@ generateThumbnailButton.addEventListener("click", async () => {
 
   generateThumbnailButton.disabled = true;
   generateThumbnailButton.textContent = "Generating...";
-  setThumbnailState(null, "Narrivox AI is generating a thumbnail preview...");
+  setThumbnailState(null, "ScriptGenie AI is generating a thumbnail preview...");
 
   try {
     const data = await requestJson("/api/generate-thumbnail", {
@@ -387,7 +387,7 @@ async function restoreSession() {
     showWorkspace(data.user, data.scripts || []);
   } catch {
     sessionToken = "";
-    localStorage.removeItem("narrivox-session-token");
+    localStorage.removeItem("scriptgenie-session-token");
     showLogin();
     setActiveAuthTab("login");
   } finally {
