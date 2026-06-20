@@ -840,14 +840,13 @@ textarea:focus {
 .ai-assistant{
     position:absolute;
 
-    left:56%;
-    top:46%;
+    left:48%;
+    top:28%;
 
-    width:340px;
-    height:380px;
+    width:430px;
+    height:560px;
 
     z-index:5;
-
     pointer-events:none;
 }
 
@@ -857,18 +856,18 @@ textarea:focus {
     bottom:0;
     left:50%;
 
-    width:240px;
+    width:100%;
 
     transform:translateX(-50%);
 }
-
 .robot-head{
     position:absolute;
 
-    bottom:130px;
+    bottom:188px;
+
     left:50%;
 
-    width:240px;
+    width:100%;
 
     transform-origin:center bottom;
 
