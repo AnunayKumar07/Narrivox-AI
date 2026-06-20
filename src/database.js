@@ -6,7 +6,7 @@ import { MongoClient } from "mongodb";
 const dataDir = fileURLToPath(new URL("../data/", import.meta.url));
 const defaultDbPath = join(dataDir, "db.json");
 const mongoUri = process.env.MONGODB_URI || "";
-const mongoDbName = process.env.MONGODB_DB_NAME || "narrivox_ai";
+const mongoDbName = process.env.MONGODB_DB_NAME || "scriptgenie_ai";
 
 const DEFAULT_DB = {
   users: [],
