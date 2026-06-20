@@ -160,6 +160,7 @@ backdrop-filter: blur(16px);
 
 .login-copy {
   padding: 26px;
+  position: relative;
 }
 
 .brand-logo {
@@ -800,4 +801,39 @@ textarea:focus {
 .output-panel,
 .auth-card {
     color: var(--text-dark);
+}
+
+
+.hero-robot {
+    position: absolute;
+    left: 42%;
+    top: 45%;
+
+    transform: translate(-50%, -50%);
+
+    width: 180px;
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation: floatRobot 4s ease-in-out infinite;
+}
+
+.hero-robot img {
+    width: 100%;
+    display: block;
+}
+
+@keyframes floatRobot {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(-50%, -60%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
 }
