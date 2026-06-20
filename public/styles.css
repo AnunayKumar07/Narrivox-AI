@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 :root {
   color-scheme: dark;
 
@@ -20,6 +22,10 @@
 
   --shadow: 0 20px 60px rgba(0,0,0,.5);
   --shadow-soft: 0 8px 25px rgba(0,0,0,.35);
+
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-dark: #0f172a;
 }
 
 * {
@@ -44,7 +50,7 @@ radial-gradient(circle at 50% 80%, rgba(6,182,212,.18), transparent 35%),
 
 body::before,
 body::after {
-  z-index: -1;
+  z-index: 0;
   content: "";
   position: fixed;
   pointer-events: none;
@@ -53,8 +59,16 @@ body::after {
 
 body::before {
   background:
-    radial-gradient(circle at 15% 82%, rgba(0, 87, 255, 0.18) 0 130px, transparent 131px),
-    radial-gradient(circle at 88% 16%, rgba(255, 45, 85, 0.16) 0 150px, transparent 151px);
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(0,87,255,.18) 0 120px,
+      transparent 121px
+    ),
+    radial-gradient(
+      circle at 88% 16%,
+      rgba(255,45,85,.16) 0 150px,
+      transparent 151px
+    );
 }
 
 body::after {
@@ -262,13 +276,16 @@ backdrop-filter: blur(16px);
 
 .section-heading p,
 .helper-text,
-label span,
 #status,
-.sidebar-user p,
 .history-empty,
 .history-meta,
 .thumbnail-empty {
-  color: var(--muted);
+  color: #64748b;
+}
+
+label span,
+.sidebar-user p {
+  color: #334155;
 }
 
 .section-heading.compact h3 {
@@ -294,7 +311,7 @@ textarea {
   border-radius: 18px;
   padding: 14px 16px;
   background: white;
-  color: var(--ink);
+  color: #111827;
   box-shadow: 4px 4px 0 var(--line);
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
@@ -443,6 +460,7 @@ textarea:focus {
   overflow-wrap: anywhere;
   word-break: break-word;
   font-size: 1.02rem;
+  color: #0f172a;
 }
 
 .sidebar-stats {
@@ -525,7 +543,7 @@ textarea:focus {
   border: 3px solid var(--line);
   border-radius: 20px;
   background: white;
-  color: var(--ink);
+  color: #0f172a;
   padding: 12px;
   box-shadow: var(--shadow-soft);
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
@@ -775,4 +793,11 @@ textarea:focus {
   .output-card {
     min-height: 360px;
   }
+}
+
+.sidebar,
+.form-panel,
+.output-panel,
+.auth-card {
+    color: var(--text-dark);
 }
