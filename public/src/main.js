@@ -400,18 +400,13 @@ if (robotHead) {
   document.addEventListener("mousemove", (e) => {
 
     const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
 
     const dx = (e.clientX - centerX) / centerX;
-    const dy = (e.clientY - centerY) / centerY;
 
-    const rotate = dx * 12;
-    const lift = dy * -8;
+    const rotate = dx * 10; // reduce for subtle movement
 
     robotHead.style.transform =
-      `translateX(-50%)
-       translateY(${lift}px)
-       rotate(${rotate}deg)`;
+      `translateX(-50%) rotate(${rotate}deg)`;
 
   });
 
