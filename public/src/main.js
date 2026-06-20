@@ -403,7 +403,7 @@ if (robotHead) {
 
     const dx = (e.clientX - centerX) / centerX;
 
-    const rotate = dx * 10; // reduce for subtle movement
+    const rotate = dx * 6; // reduce for subtle movement
 
     robotHead.style.transform =
       `translateX(-50%) rotate(${rotate}deg)`;
